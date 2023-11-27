@@ -1,0 +1,7 @@
+console.log(`Hello, ${process.argv[2] ?? "World!"}`);
+
+console.log("Press any key to exit");
+
+process.stdin.setRawMode(true);
+process.stdin.resume();
+process.stdin.on("data", process.exit.bind(process, 0));

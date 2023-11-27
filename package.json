@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate.node-esbuild-caxa",
+  "version": "0.0.0",
+  "description": "Boilerplate for packaging a '.exe' Node.js with esbuild and caxa",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --target=es2020 --format=esm",
+    "package": "caxa --input dist --output bin/hello.exe -- \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\""
+  },
+  "keywords": [
+    "node",
+    "esbuild",
+    "caxa",
+    "esm"
+  ],
+  "author": "tanishqmanuja",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "caxa": "^3.0.1",
+    "esbuild": "^0.19.8",
+    "tsx": "^4.5.0",
+    "typescript": "^5.3.2"
+  }
+}
